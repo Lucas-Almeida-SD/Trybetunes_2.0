@@ -9,17 +9,19 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
+import routes from './utils/routes';
+
 class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route path="/" element={ <Login /> } />
-        <Route path="/search" element={ <Search /> } />
-        <Route path="/album/:id" element={ <Album /> } />
-        <Route path="/favorites" element={ <Favorites /> } />
-        <Route path="/profile" element={ <Profile /> } />
-        <Route path="/profile/edit" element={ <ProfileEdit /> } />
-        <Route path="/*" element={ <NotFound /> } />
+        <Route path={ routes.login } element={ <Login /> } />
+        <Route path={ routes.search } element={ <Search /> } />
+        <Route path={ routes.album } element={ <Album /> } />
+        <Route path={ routes.favorites } element={ <Favorites /> } />
+        <Route path={ routes.profile } element={ <Profile /> } />
+        <Route path={ routes.profileEdit } element={ <ProfileEdit /> } />
+        <Route path={ routes.notFound } element={ <NotFound /> } />
       </Routes>
     );
   }
