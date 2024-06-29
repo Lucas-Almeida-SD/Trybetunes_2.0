@@ -14,8 +14,8 @@ function AlbumCard({ albumData }) {
     >
       <div>
         <img src={ artworkUrl100 } alt={ collectionName } />
-        <p>{collectionName}</p>
-        <span>{artistName}</span>
+        <p data-testid="album-name">{collectionName}</p>
+        <span data-testid="artist-name">{artistName}</span>
       </div>
     </Link>
   );
