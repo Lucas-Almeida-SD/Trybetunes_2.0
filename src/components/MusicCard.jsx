@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function MusicCard({ musicData }) {
-  const { trackName, previewUrl } = musicData;
+import { addSong } from '../services/favoriteSongsAPI';
+
+function MusicCard({ musicData, setIsLoading }) {
+  const { trackName, previewUrl, trackId } = musicData;
 
   const handlePlayAudio = ({ target }) => {
     const selectedMusic = document.querySelector('.selected');
@@ -13,6 +15,12 @@ function MusicCard({ musicData }) {
     }
 
     target.classList.add('selected');
+  };
+
+  const handleClickFavorite = async () => {
+    setIsLoading(true);
+    await addSong(musicData);
+    setIsLoading(false);
   };
 
   return (
@@ -26,6 +34,15 @@ function MusicCard({ musicData }) {
       >
         <track kind="captions" />
       </audio>
+      <label htmlFor={ trackId }>
+        <input
+          data-testid={ `checkbox-music-${trackId}` }
+          type="checkbox"
+          id={ trackId }
+          onChange={ handleClickFavorite }
+        />
+        <span>Favorita</span>
+      </label>
     </div>
   );
 }
@@ -36,5 +53,7 @@ MusicCard.propTypes = {
   musicData: PropTypes.shape({
     trackName: PropTypes.string.isRequired,
     previewUrl: PropTypes.string.isRequired,
+    trackId: PropTypes.number.isRequired,
   }).isRequired,
+  setIsLoading: PropTypes.func.isRequired,
 };

@@ -31,7 +31,11 @@ function Album() {
         <>
           <AlbumCard albumData={ musicList[0] } />
           {musicList.slice(1).map((musicData) => (
-            <MusicCard key={ musicData.trackId } musicData={ musicData } />))}
+            <MusicCard
+              key={ musicData.trackId }
+              musicData={ musicData }
+              setIsLoading={ setIsLoading }
+            />))}
         </>)}
     </div>
   );
