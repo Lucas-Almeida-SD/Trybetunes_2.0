@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { addSong } from '../services/favoriteSongsAPI';
 
-function MusicCard({ musicData, setIsLoading }) {
+function MusicCard({ musicData, setIsLoading, favoriteMusicList }) {
+  const [isFavorite, setIsFavorite] = useState(false);
   const { trackName, previewUrl, trackId } = musicData;
 
   const handlePlayAudio = ({ target }) => {
@@ -17,11 +18,20 @@ function MusicCard({ musicData, setIsLoading }) {
     target.classList.add('selected');
   };
 
-  const handleClickFavorite = async () => {
+  const handleChangeFavorite = async ({ target }) => {
     setIsLoading(true);
     await addSong(musicData);
+    setIsFavorite(!target.checked);
     setIsLoading(false);
   };
+
+  useEffect(() => {
+    setIsFavorite(
+      favoriteMusicList.some(
+        (favoriteMusicData) => favoriteMusicData.trackId === trackId,
+      ),
+    );
+  }, [favoriteMusicList, trackId]);
 
   return (
     <div>
@@ -39,7 +49,8 @@ function MusicCard({ musicData, setIsLoading }) {
           data-testid={ `checkbox-music-${trackId}` }
           type="checkbox"
           id={ trackId }
-          onChange={ handleClickFavorite }
+          onChange={ handleChangeFavorite }
+          checked={ isFavorite }
         />
         <span>Favorita</span>
       </label>
@@ -56,4 +67,9 @@ MusicCard.propTypes = {
     trackId: PropTypes.number.isRequired,
   }).isRequired,
   setIsLoading: PropTypes.func.isRequired,
+  favoriteMusicList: PropTypes.arrayOf(PropTypes.shape({
+    trackName: PropTypes.string.isRequired,
+    previewUrl: PropTypes.string.isRequired,
+    trackId: PropTypes.number.isRequired,
+  })).isRequired,
 };
