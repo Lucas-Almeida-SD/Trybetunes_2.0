@@ -20,7 +20,7 @@ function Album() {
       setMusicList(response);
     };
 
-    const favoriteSongResponse = async () => {
+    const favoriteSongAPI = async () => {
       const response = await getFavoriteSongs();
       setFavoriteMusicList(response);
     };
@@ -28,7 +28,7 @@ function Album() {
     const initComponent = async () => {
       setIsLoading(true);
       await musicsRequestAPI();
-      await favoriteSongResponse();
+      await favoriteSongAPI();
       setIsLoading(false);
     };
 
@@ -53,6 +53,7 @@ function Album() {
               musicData={ musicData }
               setIsLoading={ setIsLoading }
               favoriteMusicList={ favoriteMusicList }
+              setFavoriteMusicList={ setFavoriteMusicList }
             />))}
         </>)}
     </div>

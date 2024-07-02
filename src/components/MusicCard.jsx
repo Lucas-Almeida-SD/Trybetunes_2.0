@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { addSong, removeSong } from '../services/favoriteSongsAPI';
+import { useLocation } from 'react-router-dom';
+import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import routes from '../utils/routes';
 
-function MusicCard({ musicData, setIsLoading, favoriteMusicList }) {
+function MusicCard({ musicData, setIsLoading, favoriteMusicList, setFavoriteMusicList }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const { trackName, previewUrl, trackId } = musicData;
+  const location = useLocation();
 
   const handlePlayAudio = ({ target }) => {
     const selectedMusic = document.querySelector('.selected');
@@ -25,9 +28,19 @@ function MusicCard({ musicData, setIsLoading, favoriteMusicList }) {
     } else {
       await removeSong(musicData);
     }
+
     setIsFavorite(!target.checked);
+
+    if (location.pathname === routes.favorites) {
+      const favoriteMusicListUpdated = await getFavoriteSongs();
+      setFavoriteMusicList(favoriteMusicListUpdated);
+    }
+
     setIsLoading(false);
   };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => () => setIsLoading(false), []);
 
   useEffect(() => {
     setIsFavorite(
@@ -35,7 +48,8 @@ function MusicCard({ musicData, setIsLoading, favoriteMusicList }) {
         (favoriteMusicData) => favoriteMusicData.trackId === trackId,
       ),
     );
-  }, [favoriteMusicList, trackId]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
@@ -76,4 +90,5 @@ MusicCard.propTypes = {
     previewUrl: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
   })).isRequired,
+  setFavoriteMusicList: PropTypes.func.isRequired,
 };
