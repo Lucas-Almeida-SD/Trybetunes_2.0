@@ -1,0 +1,105 @@
+#login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--color-background-gray-1), var(--color-background-black));
+
+  #login-section {
+    width: 600px;
+    background: linear-gradient(to bottom, var(--color-background-black), var(--color-background-gray-2));
+    padding: 40px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  
+    #login-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 34px;
+  
+      #page-icon-container {
+        width: 50px;
+        height: 50px;
+        background-color: var(--color-background-white);
+        border-radius: 9999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        #page-icon {
+          width: 80%;
+        }
+      }
+
+      #login-title {
+        color: var(--color-font-white);
+        font-family: var(--font-family-title);
+        font-weight: bolder;
+        font-size: 24px;
+      }
+    }
+
+    #login-form {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      align-items: center;
+      color: var(--color-font-white);
+      gap: 28px;
+
+      label {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        span {
+          font-family: var(--font-family-label);
+          font-size: 16px;
+        }
+
+        input {
+          width: 100%;
+          padding: 8px 16px;
+          outline: none;
+          border-radius: 2px;
+          border: 1px solid var(--color-border-gray-1);
+          background-color: transparent;
+          color: var(--color-font-white);
+          font-family: var(--font-family-input);
+          font-size: 18px;
+          transition: 1s;
+        }
+
+        input:focus {
+          box-shadow: 0 0 0 1px var(--color-shadow-white);
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 9999px;
+        border: none;
+        background-color: var(--color-background-green-1);
+        font-family: var(--font-family-button);
+        font-size: 18px;
+        transition: 1s;
+      }
+
+      button:hover {
+        cursor: pointer;
+        filter: brightness(.6);
+      }
+
+      button:disabled {
+        filter: brightness(0.2);
+      }
+    }
+    
+  }
+}
