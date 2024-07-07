@@ -12,6 +12,8 @@ import NotFound from './pages/NotFound';
 import routes from './utils/routes';
 import Layout from './components/Layout';
 
+import './styles/root.scss';
+
 class App extends React.Component {
   render() {
     return (

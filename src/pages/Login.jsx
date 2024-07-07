@@ -3,7 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 
+import '../styles/Login.scss';
+
 import routes from '../utils/routes';
+
+import songIcon from '../assets/images/song_icon.png';
 
 function Login() {
   const [userName, setUserName] = useState('');
@@ -28,26 +32,36 @@ function Login() {
   }
 
   return (
-    <div data-testid="page-login">
-      <h1>Login</h1>
-      <form action="">
-        <input
-          data-testid="login-name-input"
-          type="text"
-          name="name"
-          id="input-name"
-          value={ userName }
-          onChange={ handleChange }
-        />
-        <button
-          data-testid="login-submit-button"
-          disabled={ !enableBtn() }
-          type="submit"
-          onClick={ handleClick }
-        >
-          Entrar
-        </button>
-      </form>
+    <div data-testid="page-login" id="login-page">
+      <section id="login-section">
+        <header id="login-header">
+          <div id="page-icon-container">
+            <img id="page-icon" src={ songIcon } alt="Ícone da Aplicação" />
+          </div>
+          <h2 id="login-title">Entrar no Trybetunes</h2>
+        </header>
+        <form action="" id="login-form">
+          <label htmlFor="input-name">
+            <span>Nome de usuário</span>
+            <input
+              data-testid="login-name-input"
+              type="text"
+              name="name"
+              id="input-name"
+              value={ userName }
+              onChange={ handleChange }
+            />
+          </label>
+          <button
+            data-testid="login-submit-button"
+            disabled={ !enableBtn() }
+            type="submit"
+            onClick={ handleClick }
+          >
+            Entrar
+          </button>
+        </form>
+      </section>
     </div>
   );
 }
