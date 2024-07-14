@@ -4,10 +4,10 @@ import Header from './Header';
 
 function Layout() {
   return (
-    <>
+    <div id="page">
       <Header />
       <Outlet />
-    </>
+    </div>
   );
 }
 
