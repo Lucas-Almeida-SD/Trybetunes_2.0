@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 
 import AlbumCard from './AlbumCard';
 
+import '../styles/AlbumList.scss';
+
 function AlbumList({ albumList, search }) {
   return (
-    <div>
-      <p>{`Resultado de álbuns de: ${search}`}</p>
-      {albumList.map((albumData) => (
-        <AlbumCard key={ albumData.collectionId } albumData={ albumData } />
-      ))}
+    <div id="album-list-container">
+      <p id="album-list-search">{`Resultado de álbuns de: ${search}`}</p>
+      <div id="album-list-content">
+        {albumList.map((albumData) => (
+          <AlbumCard key={ albumData.collectionId } albumData={ albumData } />
+        ))}
+      </div>
     </div>
   );
 }
