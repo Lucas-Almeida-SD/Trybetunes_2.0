@@ -1,0 +1,34 @@
+.album-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+
+  .album-image {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .album-name, .artist-name {
+    color: var(--color-font-white);
+    font-family: var(--font-family-text);
+  }
+
+  .album-name {
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    font-size: 18px;
+  }
+
+  .artist-name {
+    font-size: 16px;
+    filter: brightness(0.5);
+  }
+}
+
+.album-card:hover {
+  background-color: var(--color-background-gray-1);
+}
