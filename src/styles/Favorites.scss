@@ -1,0 +1,9 @@
+#favorites-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  background: linear-gradient(to bottom, var(--color-background-gray-3), var(--color-background-gray-2));
+  border-radius: 4px;
+}
