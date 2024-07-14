@@ -4,7 +4,7 @@ import Header from './Header';
 
 function Layout() {
   return (
-    <div id="page">
+    <div id="page-background">
       <Header />
       <Outlet />
     </div>
