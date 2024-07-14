@@ -28,10 +28,15 @@ function Album() {
     };
 
     const initComponent = async () => {
-      setIsLoading(true);
-      await musicsRequestAPI();
-      await favoriteSongAPI();
-      setIsLoading(false);
+      try {
+        setIsLoading(true);
+        await musicsRequestAPI();
+        await favoriteSongAPI();
+      } catch (err) {
+        console.error('Oops...Algo deu errado. Tente novamente!');
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     initComponent();
