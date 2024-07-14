@@ -1,0 +1,54 @@
+#search-page {
+  background-color: var(--color-background-gray-3);
+  flex-grow: 1;
+  border-radius: 4px;
+  padding: 28px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  #search-page-form {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+
+    input {
+      width: 500px;
+      outline: none;
+      padding: 8px;
+      border: 1px solid var(--color-background-gray-1);
+      background-color: var(--color-background-gray-2);
+      border-radius: 2px;
+      color: var(--color-background-white);
+    }
+
+    button {
+      padding: 8px 16px;
+      border-radius: 2px;
+      border: none;
+      background-color: var(--color-background-green-1);
+      transition: 1s;
+    }
+
+    button:hover:enabled {
+      cursor: pointer;
+    }
+
+    button:disabled {
+      filter: brightness(.5);
+    }
+  }
+
+  #album-list-section {
+    display: flex;
+    justify-content: center;
+
+    #no-album-message {
+      font-family: var(--font-family-label);
+      font-size: 26px;
+      word-spacing: 4px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+  }
+}
