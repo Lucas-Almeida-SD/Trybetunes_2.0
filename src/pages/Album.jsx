@@ -8,6 +8,8 @@ import Loading from '../components/Loading';
 import musicsAPI from '../services/musicsAPI';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
+import '../styles/Album.scss';
+
 function Album() {
   const [musicList, setMusicList] = useState(null);
   const [favoriteMusicList, setFavoriteMusicList] = useState(null);
@@ -40,21 +42,24 @@ function Album() {
   }, []);
 
   return (
-    <div data-testid="page-album">
-      <h1>Album</h1>
+    <div data-testid="page-album" className="page" id="album-page">
       {isLoading && <Loading />}
       {musicList && favoriteMusicList
       && (
         <>
-          <AlbumCard albumData={ musicList[0] } />
-          {musicList.slice(1).map((musicData) => (
-            <MusicCard
-              key={ musicData.trackId }
-              musicData={ musicData }
-              setIsLoading={ setIsLoading }
-              favoriteMusicList={ favoriteMusicList }
-              setFavoriteMusicList={ setFavoriteMusicList }
-            />))}
+          <div id="album-container">
+            <AlbumCard albumData={ musicList[0] } />
+          </div>
+          <div id="music-list-container">
+            {musicList.slice(1).map((musicData) => (
+              <MusicCard
+                key={ musicData.trackId }
+                musicData={ musicData }
+                setIsLoading={ setIsLoading }
+                favoriteMusicList={ favoriteMusicList }
+                setFavoriteMusicList={ setFavoriteMusicList }
+              />))}
+          </div>
         </>)}
     </div>
   );
