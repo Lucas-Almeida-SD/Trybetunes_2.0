@@ -4,6 +4,8 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import AlbumList from '../components/AlbumList';
 import Loading from '../components/Loading';
 
+import '../styles/Search.scss';
+
 function Search() {
   const [searchInput, setSearchInput] = useState('');
   const [search, setSearch] = useState('');
@@ -19,17 +21,23 @@ function Search() {
   const handleClickSearchBtn = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    const response = await searchAlbumsAPI(searchInput);
-    setAlbumList(response);
-    setIsLoading(false);
-    setSearch(searchInput);
-    setSearchInput('');
+
+    try {
+      const response = await searchAlbumsAPI(searchInput);
+      setAlbumList(response);
+      setSearch(searchInput);
+      setSearchInput('');
+    } catch (err) {
+      console.error('Oops...Algo deu errado. Tente novamente!');
+    } finally {
+      setIsEnableBtn(false);
+      setIsLoading(false);
+    }
   };
 
   return (
-    <div data-testid="page-search">
-      <h1>Search</h1>
-      <form action="">
+    <div data-testid="page-search" id="search-page" className="page">
+      <form action="" id="search-page-form">
         <input
           data-testid="search-artist-input"
           type="text"
@@ -45,12 +53,12 @@ function Search() {
           Pesquisar
         </button>
       </form>
-      <section>
+      <section id="album-list-section">
         {isLoading && <Loading /> }
         {albumList && (
           albumList.length
             ? <AlbumList albumList={ albumList } search={ search } />
-            : <p>Nenhum álbum foi encontrado</p>
+            : <p id="no-album-message">Nenhum álbum foi encontrado</p>
         )}
       </section>
     </div>
