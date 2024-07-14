@@ -24,15 +24,14 @@ function Login() {
     event.preventDefault();
     setIsLoading(true);
     await createUser({ name: userName });
+    setIsLoading(false);
     navigate(routes.search);
   };
 
-  if (isLoading) {
-    return (<Loading />);
-  }
-
   return (
-    <div data-testid="page-login" id="login-page">
+    <div data-testid="page-login" id="login-page" className="page">
+      {isLoading && <Loading /> }
+
       <section id="login-section">
         <header id="login-header">
           <div id="page-icon-container">
