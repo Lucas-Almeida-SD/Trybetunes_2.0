@@ -1,0 +1,104 @@
+#page-header {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: var(--color-background-gray-3);
+  border-radius: 4px;
+  gap: 18px;
+  
+  #page-info {
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #page-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      #page-icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 9999px;
+        background-color: var(--color-background-white);
+  
+        img {
+          width: 80%;
+        }
+      }
+
+      #page-title {
+        color: var(--color-font-white);
+        font-family: var(--font-family-title);
+        font-weight: bolder;
+        font-size: 24px;
+      }
+    }
+
+    #user-conatiner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--color-background-gray-1);
+      padding: 8px;
+      border-radius: 9999px;
+
+      #user-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-background-white);
+        border-radius: 9999px;
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      #user-name {
+        font-family: var(--font-family-label);
+        font-size: 16px;
+      }
+    }
+
+  }
+
+  #page-nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+
+    a {
+      font-family: var(--font-family-button);
+      font-size: 20px;
+      flex-grow: 1;
+      text-align: center;
+      text-decoration: none;
+      background-color: var(--color-background-gray-2);
+      padding: 8px;
+      border-radius: 4px;
+      color: var(--color-background-white);
+      transition: 1s;
+    }
+
+    a.active {
+      background-color: var(--color-background-gray-4);
+      color: black;
+    }
+  }
+
+  #loading-container {
+    width: 40px;
+    height: 40px;
+  
+    img {
+      width: 100%;
+    }
+  }
+}
