@@ -1,0 +1,26 @@
+#album-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  #album-list-search {
+    color: var(--color-font-white);
+    font-family: var(--font-family-text);
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #album-list-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+
+    .album-card {
+      width: 14%;
+    }
+  }
+}
