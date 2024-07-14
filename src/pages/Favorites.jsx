@@ -4,6 +4,8 @@ import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
 import Loading from '../components/Loading';
 
+import '../styles/Favorites.scss';
+
 function Favorites() {
   const [favoriteMusicList, setFavoriteMusicList] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,8 +21,7 @@ function Favorites() {
   }, []);
 
   return (
-    <div data-testid="page-favorites">
-      <h1>Favorites</h1>
+    <div data-testid="page-favorites" className="page" id="favorites-page">
       {isLoading && <Loading />}
       {favoriteMusicList
       && favoriteMusicList.map((favoriteMusicData) => (
