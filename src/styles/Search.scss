@@ -20,6 +20,13 @@
       background-color: var(--color-background-gray-2);
       border-radius: 2px;
       color: var(--color-background-white);
+      font-family: var(--font-family-input);
+      font-size: 24px;
+      transition: .5s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 0 1px var(--color-shadow-white);
     }
 
     button {
@@ -27,6 +34,8 @@
       border-radius: 2px;
       border: none;
       background-color: var(--color-background-green-1);
+      font-family: var(--font-family-button);
+      font-size: 18px;
       transition: 1s;
     }
 
@@ -44,6 +53,7 @@
     justify-content: center;
 
     #no-album-message {
+      color: var(--color-font-white);
       font-family: var(--font-family-label);
       font-size: 26px;
       word-spacing: 4px;
