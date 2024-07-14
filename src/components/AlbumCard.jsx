@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import routes from '../utils/routes';
 
+import '../styles/AlbumCard.scss';
+
 function AlbumCard({ albumData }) {
   const { artworkUrl100, collectionName, artistName, collectionId } = albumData;
 
@@ -11,12 +13,11 @@ function AlbumCard({ albumData }) {
     <Link
       data-testid={ `link-to-album-${collectionId}` }
       to={ `${routes.album.replace(':id', collectionId)}` }
+      className="album-card"
     >
-      <div>
-        <img src={ artworkUrl100 } alt={ collectionName } />
-        <p data-testid="album-name">{collectionName}</p>
-        <span data-testid="artist-name">{artistName}</span>
-      </div>
+      <img src={ artworkUrl100 } alt={ collectionName } className="album-image" />
+      <p data-testid="album-name" className="album-name">{collectionName}</p>
+      <span data-testid="artist-name" className="artist-name">{artistName}</span>
     </Link>
   );
 }
