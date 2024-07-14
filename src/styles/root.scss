@@ -3,11 +3,17 @@
 :root {
   --color-background-gray-1: rgb(48, 48, 48);
   --color-background-gray-2: rgb(0, 0, 0, .4);
+  --color-background-gray-3: rgb(18, 18, 18);
+  --color-background-gray-4: rgb(179, 179, 179);
+
   --color-background-black: rgb(0, 0, 0);
   --color-background-white: rgb(255, 255, 255);
   --color-background-green-1: rgb(30, 215, 96);
+
   --color-border-gray-1: rgb(167, 167, 167);
+
   --color-shadow-white: rgb(255, 255, 255);
+  
   --color-font-white: rgb(255, 255, 255);
 
   --font-family-title: 'Poppins', sans-serif;
@@ -24,4 +30,13 @@
 
 #root {
   min-height: 100vh;
+}
+
+#page-background {
+  min-height: 100vh;
+  background-color: var(--color-background-black);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
 }
