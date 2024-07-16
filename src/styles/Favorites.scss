@@ -6,4 +6,12 @@
   padding: 24px;
   background: linear-gradient(to bottom, var(--color-background-gray-3), var(--color-background-gray-2));
   border-radius: 4px;
+  flex-grow: 1;
+
+  #no-favorites-message {
+    color: var(--color-font-white);
+    font-family: var(--font-family-text);
+    font-size: 28px;
+    font-weight: bold;
+  }
 }
