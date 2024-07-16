@@ -23,16 +23,18 @@ function Favorites() {
   return (
     <div data-testid="page-favorites" className="page" id="favorites-page">
       {isLoading && <Loading />}
-      {favoriteMusicList
-      && favoriteMusicList.map((favoriteMusicData) => (
-        <MusicCard
-          key={ favoriteMusicData.trackId }
-          musicData={ favoriteMusicData }
-          setIsLoading={ setIsLoading }
-          favoriteMusicList={ [favoriteMusicData] }
-          setFavoriteMusicList={ setFavoriteMusicList }
-        />
-      ))}
+      {favoriteMusicList && (
+        favoriteMusicList.length
+          ? favoriteMusicList.map((favoriteMusicData) => (
+            <MusicCard
+              key={ favoriteMusicData.trackId }
+              musicData={ favoriteMusicData }
+              setIsLoading={ setIsLoading }
+              favoriteMusicList={ [favoriteMusicData] }
+              setFavoriteMusicList={ setFavoriteMusicList }
+            />
+          ))
+          : <p id="no-favorites-message">Não há músicas favoritas!</p>)}
     </div>
   );
 }
