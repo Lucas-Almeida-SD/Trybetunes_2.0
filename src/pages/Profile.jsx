@@ -5,6 +5,9 @@ import Loading from '../components/Loading';
 
 import { getUser } from '../services/userAPI';
 import routes from '../utils/routes';
+import userIcon from '../assets/images/user.png';
+
+import '../styles/Profile.scss';
 
 function Profile() {
   const [user, setUser] = useState(undefined);
@@ -22,25 +25,37 @@ function Profile() {
   }, []);
 
   return (
-    <div data-testid="page-profile">
+    <div data-testid="page-profile" className="page" id="profile-page">
       {isLoading && <Loading />}
       {user && (
-        <div>
-          <div>
-            <img data-testid="profile-image" src={ user.image } alt={ user.name } />
-            <Link to={ routes.profileEdit }>Editar perfil</Link>
+        <div id="user-info">
+          <div className="info-container image-container">
+            <div className="image-background">
+              <img
+                data-testid="profile-image"
+                id="user-image"
+                src={ user.image || userIcon }
+                alt={ user.name }
+              />
+            </div>
+            <Link
+              to={ routes.profileEdit }
+              className="profile-edit-btn"
+            >
+              Editar perfil
+            </Link>
           </div>
-          <div>
-            <span>Nome</span>
-            <span>{user.name}</span>
+          <div className="info-container">
+            <span className="info-label">Nome:</span>
+            <span className="info">{user.name}</span>
           </div>
-          <div>
-            <span>Email</span>
-            <span>{user.email}</span>
+          <div className="info-container">
+            <span className="info-label">Email:</span>
+            <span className="info">{user.email}</span>
           </div>
-          <div>
-            <span>Descrição</span>
-            <p>{user.description}</p>
+          <div className="info-container">
+            <span className="info-label">Descrição:</span>
+            <p className="info">{user.description}</p>
           </div>
         </div>
       )}
