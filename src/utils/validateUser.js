@@ -2,7 +2,7 @@ const userRules = {
   name: /\S+/,
   email: /\w+@\w+\.\w+/,
   description: /\S+/,
-  image: /\S+/,
+  image: /./,
 };
 
 export default function validateUser(user) {
