@@ -1,4 +1,5 @@
 {
+  "homepage": "https://lucas-almeida-sd.github.io/Trybetunes_2.0/",
   "name": "trybetunes",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "gh-pages": "^6.1.1",
     "history": "^5.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -23,7 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:styles": "npx stylelint '**/*.css'",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx"
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
