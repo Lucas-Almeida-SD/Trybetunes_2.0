@@ -65,6 +65,17 @@
         padding: 4px;
         outline: none;
         border: 1px solid var(--color-background-gray-4);
+        transition: .5s;
+      }
+
+      .info:focus {
+        box-shadow:  0 0 0 1px var(--color-background-blue-1);
+        border-color: var(--color-background-blue-1);
+      }
+
+      textarea.info {
+        resize: none;
+        height: 100px;
       }
     }
 
