@@ -18,15 +18,15 @@ class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route path={ routes.login } element={ <Login /> } />
+        <Route exact path={ routes.login } element={ <Login /> } />
         <Route path="" element={ <Layout /> }>
           <Route path={ routes.search } element={ <Search /> } />
           <Route path={ routes.album } element={ <Album /> } />
           <Route path={ routes.favorites } element={ <Favorites /> } />
           <Route path={ routes.profile } element={ <Profile /> } />
           <Route path={ routes.profileEdit } element={ <ProfileEdit /> } />
+          <Route path={ routes.notFound } element={ <NotFound /> } />
         </Route>
-        <Route path={ routes.notFound } element={ <NotFound /> } />
       </Routes>
     );
   }
