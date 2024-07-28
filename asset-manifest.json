@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Trybetunes_2.0/static/css/main.9b789bd5.chunk.css",
+    "main.js": "/Trybetunes_2.0/static/js/main.8062f5f4.chunk.js",
+    "main.js.map": "/Trybetunes_2.0/static/js/main.8062f5f4.chunk.js.map",
+    "runtime-main.js": "/Trybetunes_2.0/static/js/runtime-main.c3082a89.js",
+    "runtime-main.js.map": "/Trybetunes_2.0/static/js/runtime-main.c3082a89.js.map",
+    "static/js/2.c655e263.chunk.js": "/Trybetunes_2.0/static/js/2.c655e263.chunk.js",
+    "static/js/2.c655e263.chunk.js.map": "/Trybetunes_2.0/static/js/2.c655e263.chunk.js.map",
+    "index.html": "/Trybetunes_2.0/index.html",
+    "static/css/main.9b789bd5.chunk.css.map": "/Trybetunes_2.0/static/css/main.9b789bd5.chunk.css.map",
+    "static/js/2.c655e263.chunk.js.LICENSE.txt": "/Trybetunes_2.0/static/js/2.c655e263.chunk.js.LICENSE.txt",
+    "static/media/song_icon.7196a6ee.png": "/Trybetunes_2.0/static/media/song_icon.7196a6ee.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c3082a89.js",
+    "static/js/2.c655e263.chunk.js",
+    "static/css/main.9b789bd5.chunk.css",
+    "static/js/main.8062f5f4.chunk.js"
+  ]
+}
