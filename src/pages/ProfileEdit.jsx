@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Proptypes from 'prop-types';
 
 import Loading from '../components/Loading';
 
@@ -10,7 +11,7 @@ import userIcon from '../assets/images/user.png';
 
 import '../styles/ProfileEdit.scss';
 
-function ProfileEdit() {
+function ProfileEdit({ setIsUserUpdated }) {
   const [user, setUser] = useState(undefined);
   const [imagePath, setImagePath] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -46,12 +47,6 @@ function ProfileEdit() {
   }, []);
 
   useEffect(() => {
-    const refresh = () => window.location.reload();
-
-    return refresh;
-  }, []);
-
-  useEffect(() => {
     if (user) setIsValidFields(validateUser(user));
   }, [user]);
 
@@ -69,6 +64,7 @@ function ProfileEdit() {
   const handleClick = async () => {
     setIsLoading(true);
     await updateUser(user);
+    setIsUserUpdated((previous) => !previous);
 
     navigate(routes.profile);
   };
@@ -162,3 +158,7 @@ function ProfileEdit() {
 }
 
 export default ProfileEdit;
+
+ProfileEdit.propTypes = {
+  setIsUserUpdated: Proptypes.func.isRequired,
+};
