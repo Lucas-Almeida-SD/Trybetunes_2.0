@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUser } from '../services/userAPI';
+
 import Loading from '../components/Loading';
 
-import '../styles/Login.scss';
-
+import { createUser, getUser } from '../services/userAPI';
 import routes from '../utils/routes';
-
 import songIcon from '../assets/images/song_icon.png';
+
+import '../styles/Login.scss';
 
 function Login() {
   const [userName, setUserName] = useState('');
@@ -27,6 +27,24 @@ function Login() {
     setIsLoading(false);
     navigate(routes.search);
   };
+
+  useEffect(() => {
+    const getUserRequest = async () => {
+      try {
+        setIsLoading(true);
+        const response = await getUser();
+        if (response.name) navigate(routes.search);
+      } catch (err) {
+        console.log('Erro');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    getUserRequest();
+
+    return () => setIsLoading(false);
+  }, [navigate]);
 
   return (
     <div data-testid="page-login" id="login-page" className="page">
