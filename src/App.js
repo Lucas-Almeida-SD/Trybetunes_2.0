@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Login from './pages/Login';
@@ -14,22 +14,25 @@ import Layout from './components/Layout';
 
 import './styles/root.scss';
 
-class App extends React.Component {
-  render() {
-    return (
-      <Routes>
-        <Route exact path={ routes.login } element={ <Login /> } />
-        <Route path="" element={ <Layout /> }>
-          <Route path={ routes.search } element={ <Search /> } />
-          <Route path={ routes.album } element={ <Album /> } />
-          <Route path={ routes.favorites } element={ <Favorites /> } />
-          <Route path={ routes.profile } element={ <Profile /> } />
-          <Route path={ routes.profileEdit } element={ <ProfileEdit /> } />
-          <Route path={ routes.notFound } element={ <NotFound /> } />
-        </Route>
-      </Routes>
-    );
-  }
+function App() {
+  const [isUserUpdated, setIsUserUpdated] = useState(true);
+
+  return (
+    <Routes>
+      <Route exact path={ routes.login } element={ <Login /> } />
+      <Route path="" element={ <Layout isUserUpdated={ isUserUpdated } /> }>
+        <Route path={ routes.search } element={ <Search /> } />
+        <Route path={ routes.album } element={ <Album /> } />
+        <Route path={ routes.favorites } element={ <Favorites /> } />
+        <Route path={ routes.profile } element={ <Profile /> } />
+        <Route
+          path={ routes.profileEdit }
+          element={ <ProfileEdit setIsUserUpdated={ setIsUserUpdated } /> }
+        />
+        <Route path={ routes.notFound } element={ <NotFound /> } />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
