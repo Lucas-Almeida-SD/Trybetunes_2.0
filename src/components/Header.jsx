@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Proptypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
@@ -9,7 +10,7 @@ import userIcon from '../assets/images/user.png';
 
 import '../styles/Header.scss';
 
-function Header() {
+function Header({ isUserUpdated }) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,7 +23,7 @@ function Header() {
     };
 
     getUserName();
-  }, []);
+  }, [isUserUpdated]);
 
   return (
     <header data-testid="header-component" id="page-header">
@@ -70,3 +71,7 @@ function Header() {
 }
 
 export default Header;
+
+Header.propTypes = {
+  isUserUpdated: Proptypes.bool.isRequired,
+};
