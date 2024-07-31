@@ -24,3 +24,13 @@
     margin: auto;
   }
 }
+
+@media screen and (max-width: 600px) {
+  
+  .page #loading-container {
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
