@@ -107,3 +107,45 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  #page-header {
+    #page-info {
+
+      #page-logo-container {
+
+        #page-icon-container {
+          width: 30px;
+          height: 30px;
+        }
+
+        #page-title {
+          font-size: 18px;
+        }
+      }
+
+      #user-conatiner {
+        gap: 4px;
+        padding: 4px;
+
+        #user-image-container {
+          width: 30px;
+          height: 30px;
+        }
+
+        #user-name {
+          font-size: 12px;
+        }
+      }
+
+    }
+
+    #page-nav {
+      gap: 8px;
+  
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
