@@ -6,7 +6,8 @@
   background: linear-gradient(to bottom, var(--color-background-gray-1), var(--color-background-black));
 
   #login-section {
-    width: 600px;
+    width: 80%;
+    max-width: 600px;
     background: linear-gradient(to bottom, var(--color-background-black), var(--color-background-gray-2));
     padding: 40px 20px;
     border-radius: 8px;
@@ -40,13 +41,14 @@
         font-family: var(--font-family-title);
         font-weight: bolder;
         font-size: 24px;
+        text-align: center;
       }
     }
 
     #login-form {
       display: flex;
       flex-direction: column;
-      width: 60%;
+      width: 80%;
       align-items: center;
       color: var(--color-font-white);
       gap: 28px;
@@ -101,5 +103,47 @@
       }
     }
     
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #login-page {
+    #login-section {
+      gap: 24px;
+    
+      #login-header {
+        gap: 18px;
+    
+        #page-icon-container {
+          width: 30px;
+          height: 30px;
+        }
+
+        #login-title {
+          font-size: 18px;
+        }
+      }
+
+      #login-form {
+
+        label {
+
+          span {
+            font-size: 12px;
+          }
+
+          input {
+            padding: 4px;
+            font-size: 12px;
+          }
+        }
+
+        button {
+          padding: 8px;
+          font-size: 12px;
+        }
+      }
+      
+    }
   }
 }
