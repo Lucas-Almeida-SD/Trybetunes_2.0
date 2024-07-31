@@ -10,6 +10,7 @@
     font-family: var(--font-family-text);
     font-size: 20px;
     font-weight: bold;
+    text-align: justify;
   }
 
   #album-list-content {
@@ -20,7 +21,17 @@
     gap: 18px;
 
     .album-card {
-      width: 14%;
+      width: 160px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  #album-list-container {
+  
+    #album-list-search {
+      font-size: 16px;
     }
   }
 }
