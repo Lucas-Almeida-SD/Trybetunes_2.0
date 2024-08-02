@@ -27,13 +27,21 @@
       max-width: 500px;
     }
 
-    .music-name {
+    .music-name, .artist-name {
       overflow: hidden;
       text-wrap: nowrap;
       text-overflow: ellipsis;
-      color: white;
       font-family: var(--font-family-text);
+    }
+
+    .music-name {
+      color: var(--color-background-white);
       font-size: 18px;
+    }
+
+    .artist-name {
+      color: var(--color-background-gray-4);
+      font-size: 16px;
     }
   }
 
@@ -50,17 +58,20 @@
   .music-card-container {
     padding-left: 8px;
     padding-right: 8px;
-
   
     .album-music-image {
       display: none;
     }
   
     .audio-info-container {
-      gap: 8px;
+      gap: 4px;
   
       .music-name {
         font-size: 14px;
+      }
+
+      .artist-name {
+        font-size: 12px;
       }
     }
   
