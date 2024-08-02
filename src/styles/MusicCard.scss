@@ -45,3 +45,27 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .music-card-container {
+    padding-left: 8px;
+    padding-right: 8px;
+
+  
+    .album-music-image {
+      display: none;
+    }
+  
+    .audio-info-container {
+      gap: 8px;
+  
+      .music-name {
+        font-size: 14px;
+      }
+    }
+  
+    .favorite-music-icon {
+      width: 24px;
+    }
+  }
+}
