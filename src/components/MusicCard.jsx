@@ -11,7 +11,8 @@ import '../styles/MusicCard.scss';
 
 function MusicCard({ musicData, setIsLoading, favoriteMusicList, setFavoriteMusicList }) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const { trackName, previewUrl, trackId, artworkUrl100 } = musicData;
+  const { trackName, previewUrl, trackId, artworkUrl100, artistName } = musicData;
+
   const location = useLocation();
 
   const handlePlayAudio = ({ target }) => {
@@ -71,6 +72,7 @@ function MusicCard({ musicData, setIsLoading, favoriteMusicList, setFavoriteMusi
           <track kind="captions" />
         </audio>
         <span className="music-name">{trackName}</span>
+        <span className="artist-name">{artistName}</span>
       </div>
       <img
         src={ isFavorite ? filledHeartIcon : heartIcon }
@@ -91,6 +93,7 @@ MusicCard.propTypes = {
     previewUrl: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
     artworkUrl100: PropTypes.string.isRequired,
+    artistName: PropTypes.string.isRequired,
   }).isRequired,
   setIsLoading: PropTypes.func.isRequired,
   favoriteMusicList: PropTypes.arrayOf(PropTypes.shape({
