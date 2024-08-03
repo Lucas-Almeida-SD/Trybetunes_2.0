@@ -70,3 +70,36 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  #profile-page {
+  
+    #user-info {
+      width: 300px;
+  
+      .info-container {
+  
+        .info-label {
+          font-size: 18px;
+        }
+  
+        .info {
+          font-size: 14px;
+        }
+      }
+  
+      .image-container {
+  
+        .image-background {
+          width: 80px;
+          height: 80px;
+        }
+  
+        .profile-edit-btn {
+          padding: 4px 12px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
