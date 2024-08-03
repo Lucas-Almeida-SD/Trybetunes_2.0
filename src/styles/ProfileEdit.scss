@@ -100,3 +100,52 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  #profile-edit-page {
+  
+    #profile-edit-form {
+      width: 300px;
+      padding-top: 26px;
+      padding-bottom: 32px;
+  
+      .image-container{
+  
+        .image-background {
+          width: 80px;
+          height: 80px;
+  
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .info-container {
+  
+        .info-label {
+          font-size: 18px;
+        }
+  
+        .info {
+          font-size: 14px;
+          padding: 4px;
+        }
+  
+        textarea.info {
+          resize: none;
+          height: 80px;
+        }
+      }
+  
+  
+      .profile-edit-btn {
+        color: var(--color-font-black);
+        padding: 10px 14px;
+        border-radius: 4px;
+        font-family: var(--font-family-button);
+        font-size: 16px;
+      }
+    }
+  }
+}
