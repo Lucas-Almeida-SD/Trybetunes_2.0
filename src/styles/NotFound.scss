@@ -1,0 +1,20 @@
+#not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-color: var(--color-background-gray-3);
+
+  img {
+    width: 40%;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  #not-found-page {
+  
+    img {
+      width: 80%;
+    }
+  }
+}
