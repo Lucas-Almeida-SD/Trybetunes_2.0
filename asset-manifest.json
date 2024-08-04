@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/Trybetunes_2.0/static/css/main.2ccb53e8.chunk.css",
-    "main.js": "/Trybetunes_2.0/static/js/main.9905d388.chunk.js",
-    "main.js.map": "/Trybetunes_2.0/static/js/main.9905d388.chunk.js.map",
+    "main.css": "/Trybetunes_2.0/static/css/main.8a4652c2.chunk.css",
+    "main.js": "/Trybetunes_2.0/static/js/main.7051a61d.chunk.js",
+    "main.js.map": "/Trybetunes_2.0/static/js/main.7051a61d.chunk.js.map",
     "runtime-main.js": "/Trybetunes_2.0/static/js/runtime-main.c3082a89.js",
     "runtime-main.js.map": "/Trybetunes_2.0/static/js/runtime-main.c3082a89.js.map",
     "static/js/2.770cc56b.chunk.js": "/Trybetunes_2.0/static/js/2.770cc56b.chunk.js",
     "static/js/2.770cc56b.chunk.js.map": "/Trybetunes_2.0/static/js/2.770cc56b.chunk.js.map",
     "index.html": "/Trybetunes_2.0/index.html",
-    "static/css/main.2ccb53e8.chunk.css.map": "/Trybetunes_2.0/static/css/main.2ccb53e8.chunk.css.map",
+    "static/css/main.8a4652c2.chunk.css.map": "/Trybetunes_2.0/static/css/main.8a4652c2.chunk.css.map",
     "static/js/2.770cc56b.chunk.js.LICENSE.txt": "/Trybetunes_2.0/static/js/2.770cc56b.chunk.js.LICENSE.txt",
+    "static/media/not_found.690ce227.png": "/Trybetunes_2.0/static/media/not_found.690ce227.png",
     "static/media/song_icon.7196a6ee.png": "/Trybetunes_2.0/static/media/song_icon.7196a6ee.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c3082a89.js",
     "static/js/2.770cc56b.chunk.js",
-    "static/css/main.2ccb53e8.chunk.css",
-    "static/js/main.9905d388.chunk.js"
+    "static/css/main.8a4652c2.chunk.css",
+    "static/js/main.7051a61d.chunk.js"
   ]
 }
